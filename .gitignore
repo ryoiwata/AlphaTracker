@@ -29,6 +29,9 @@ Tracking/AlphaTracker/train_yolo/darknet/train.sh
 
 main_ui
 
+# Project directories
+bin/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

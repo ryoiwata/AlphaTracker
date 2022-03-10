@@ -1,8 +1,6 @@
 from google_drive_downloader import GoogleDriveDownloader as gdd
 import zipfile
 
-
-
 sppe_pretrain_weight = '1OPORTWB2cwd5YTVBX-NE8fsauZJWsrtW'
 yolo_pretrain_weight = '1g8uJjK7EOlqrUCmjZTtCegwnNsBig6zn'
 sppe_trained_weight = '1_BwtYySpX9uWDgdwqw0UEppyMYYv1gkJ'
@@ -19,7 +17,8 @@ gdd.download_file_from_google_drive(file_id=demo_data,dest_path='./data/demo.mp4
 gdd.download_file_from_google_drive(file_id=sample_training_data,dest_path='./data/sample_annotated_data.zip')
 gdd.download_file_from_google_drive(file_id=scipy_data,dest_path='../../UI/data/scipy.data')
 
-with zipfile.ZipFile('./data/sample_annotated_data.zip', 'r') as zip_ref:
-    zip_ref.extractall('./data/sample_annotated_data/')
+# Commenting because ./data/sample_annotated_data.zip is not a zip file
+# with zipfile.ZipFile('./data/sample_annotated_data.zip', 'r') as zip_ref:
+#     zip_ref.extractall('./data/sample_annotated_data/')
 
 
