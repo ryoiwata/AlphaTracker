@@ -29,7 +29,6 @@ cd ./Tracking/AlphaTracker/train_yolo/darknet/
 ## https://github.com/apache/incubator-mxnet/issues/8436
 sudo ln -s /usr/lib/x86_64-linux-gnu/libcuda.so.1 /usr/lib/x86_64-linux-gnu/libcuda.so
 make
-- check if this cd is redundant or not
 
 # Downloading
 cd ../../

@@ -1,0 +1,28 @@
+Frame will be saved in /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/track_result/oriFrameFromVideo//sample_video/frame_folder/
+extracting frames from video...
+processing /home/riwata/Projects/Tracking_Alphas/AlphaTracker/data/Sample_Data-Alphatracker/sample_video.mp4
+Loading YOLO model..
+not using ground truth box to do the eval.
+Loading pose model from /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/train_sppe/exp/coco/test_run_sample_data_2022_03_10/model_10.pkl
+===========================> Finish Model Running.
+
+Start loading json file...
+remove extract persons...
+getting demo image:
+CUDA_VISIBLE_DEVICES='0' python3 demo.py \
+ --nClasses 4 \
+ --indir /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/track_result/oriFrameFromVideo//sample_video/frame_folder/ \
+ --outdir /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/track_result  \
+ --yolo_model_path /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/train_yolo/darknet//backup/test_run_sample_data_2022_03_10/yolov3-mice_final.weights \
+ --yolo_model_cfg /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/train_yolo/darknet//cfg/yolov3-mice.cfg \
+ --pose_model_path /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/train_sppe/exp/coco/test_run_sample_data_2022_03_10/model_10.pkl \
+ --use_boxGT 0
+
+Tracking pose:
+python ./PoseFlow/tracker-general-fixNum-newSelect-noOrb.py \
+         --imgdir /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/track_result/oriFrameFromVideo//sample_video/frame_folder/ \
+         --in_json /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/track_result/alphapose-results.json \
+         --out_json /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/track_result/alphapose-results-forvis-tracked.json \
+         --visdir /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/track_result/pose_track_vis/  --vis 1\
+         --image_format %s.png         --max_pid_id_setting 2 --match 0  --weights 0 6 0 0 0 0  \
+         --out_video_path /home/riwata/Projects/Tracking_Alphas/AlphaTracker/Tracking/AlphaTracker/track_result/test_run_sample_data_2022_03_10_2_0_060000.mp4          
